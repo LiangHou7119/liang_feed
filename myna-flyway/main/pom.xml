@@ -41,7 +41,7 @@
             <id>on-prem</id>
             <properties>
                 <flyway.url>
-                    jdbc:postgresql://10.35.62.82:5432/myna
+                    jdbc:postgresql://192.168.2.102:5432/myna
                 </flyway.url>
                 <flyway.password>myna</flyway.password>
             </properties>
@@ -53,9 +53,9 @@
             <id>dev</id>
             <properties>
                 <flyway.url>
-                    jdbc:postgresql://rds-a-dev.myna.tr-fr-nonprod.aws-int.thomsonreuters.com:5432/myna
+                    jdbc:postgresql://192.168.2.159:5432/myna
                 </flyway.url>
-                <flyway.password>Seph=fe*aCH3</flyway.password>
+                <flyway.password>myna</flyway.password>
             </properties>
         </profile>        
     </profiles>
