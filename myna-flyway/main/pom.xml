@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.tr.myna</groupId>
+        <artifactId>myna-parent-pom</artifactId>
+        <version>1.9.1</version>
+    </parent>
+
+    <groupId>com.tr.myna</groupId>
+    <artifactId>myna-flyway-main-parent</artifactId>
+    <version>1.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>myna-flyway-main-parent</name>
+    <description>Myna Flyway: Parent Aggregator</description>
+
+    <modules>
+        <module>myna</module>
+        <module>fis</module>
+        <module>bulk</module>
+        <module>rules</module>
+        <module>security</module>
+        <module>backfeed</module>
+    </modules>
+    
+    <scm>
+        <connection>scm:git:https://git.sami.int.thomsonreuters.com/myna/myna-flyway.git</connection>
+        <developerConnection>scm:git:https://git.sami.int.thomsonreuters.com/myna/myna-flyway.git</developerConnection>
+        <url>https://git.sami.int.thomsonreuters.com/myna/myna-flyway</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <profiles>
+        <profile>
+            <id>on-prem</id>
+            <properties>
+                <flyway.url>
+                    jdbc:postgresql://10.35.62.82:5432/myna
+                </flyway.url>
+                <flyway.password>myna</flyway.password>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <flyway.url>
+                    jdbc:postgresql://rds-a-dev.myna.tr-fr-nonprod.aws-int.thomsonreuters.com:5432/myna
+                </flyway.url>
+                <flyway.password>Seph=fe*aCH3</flyway.password>
+            </properties>
+        </profile>        
+    </profiles>
+
+    <repositories>
+        <!-- SAMI-BAMS repositories -->
+        <repository>
+            <id>bams-snapshot-global</id>
+            <url>https://bams-aws.refinitiv.com/artifactory/snapshot.maven.global</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>bams-release-global</id>
+            <url>https://bams-aws.refinitiv.com/artifactory/release.maven.global</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>
