@@ -59,6 +59,7 @@
 
     <repositories>
         <!-- SAMI-BAMS repositories -->
+		<!--
         <repository>
             <id>bams-snapshot-global</id>
             <url>https://bams-aws.refinitiv.com/artifactory/snapshot.maven.global</url>
@@ -81,6 +82,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+		-->
     </repositories>
 
 </project>
