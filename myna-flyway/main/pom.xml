@@ -2,21 +2,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
+	<!-- 
     <parent>
         <groupId>com.tr.myna</groupId>
         <artifactId>myna-parent-pom</artifactId>
-        <version>1.9.1</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <groupId>com.tr.myna</groupId>
+ 	-->
+ 	<groupId>com.tr.myna</groupId>
     <artifactId>myna-flyway-main-parent</artifactId>
     <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+	<properties>
+		<version.org.postgresql>42.1.1</version.org.postgresql>
+	</properties>
+	
+	
     <name>myna-flyway-main-parent</name>
     <description>Myna Flyway: Parent Aggregator</description>
-
     <modules>
         <module>myna</module>
         <module>fis</module>
@@ -25,7 +29,6 @@
         <module>security</module>
         <module>backfeed</module>
     </modules>
-    
     <scm>
         <connection>scm:git:https://github.com/LiangHou7119/liang_feed.git</connection>
         <developerConnection>scm:git:https://github.com/LiangHou7119/liang_feed.git</developerConnection>
@@ -59,10 +62,9 @@
 
     <repositories>
         <!-- SAMI-BAMS repositories -->
-		<!--
         <repository>
-            <id>bams-snapshot-global</id>
-            <url>https://bams-aws.refinitiv.com/artifactory/snapshot.maven.global</url>
+            <id>snapshots</id>
+            <url>http://192.168.2.129:8081/nexus/content/repositories/snapshots</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -73,8 +75,8 @@
         </repository>
 
         <repository>
-            <id>bams-release-global</id>
-            <url>https://bams-aws.refinitiv.com/artifactory/release.maven.global</url>
+            <id>releases</id>
+            <url>http://192.168.2.129:8081/nexus/content/repositories/releases</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -82,7 +84,17 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-		-->
     </repositories>
+    
+    <distributionManagement>
+    	<repository>  
+            <id>releases</id>  
+            <url>http://192.168.2.129:8081/nexus/content/repositories/releases</url>  
+        </repository>  
+        <snapshotRepository>  
+            <id>snapshots</id>  
+            <url>http://192.168.2.129:8081/nexus/content/repositories/snapshots</url>  
+        </snapshotRepository>  
+    </distributionManagement>
 
 </project>
