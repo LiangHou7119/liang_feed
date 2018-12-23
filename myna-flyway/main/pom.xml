@@ -27,9 +27,9 @@
     </modules>
     
     <scm>
-        <connection>scm:git:https://git.sami.int.thomsonreuters.com/myna/myna-flyway.git</connection>
-        <developerConnection>scm:git:https://git.sami.int.thomsonreuters.com/myna/myna-flyway.git</developerConnection>
-        <url>https://git.sami.int.thomsonreuters.com/myna/myna-flyway</url>
+        <connection>scm:git:https://github.com/LiangHou7119/liang_feed.git</connection>
+        <developerConnection>scm:git:https://github.com/LiangHou7119/liang_feed.git</developerConnection>
+        <url>https://github.com/LiangHou7119/liang_feed.git</url>
         <tag>HEAD</tag>
     </scm>
 
